@@ -3,163 +3,125 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LALA PREDICTION 2018</title>
+<title>( A K ) CRICKET TRADER™</title>
 
-<!-- Meta Pixel -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- ===== DYNAMIC META PIXEL (BAS ID CHANGE KARNA) ===== -->
 <script>
+const PIXEL_ID = '123456789012345'; // 👈 yaha apni pixel ID daal dena
+
 !function(f,b,e,v,n,t,s){
- if(f.fbq)return;n=f.fbq=function(){
- n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
- if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
- n.queue=[];t=b.createElement(e);t.async=!0;
- t.src=v;s=b.getElementsByTagName(e)[0];
- s.parentNode.insertBefore(t,s)
+if(f.fbq)return;
+n=f.fbq=function(){
+n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)
+};
+if(!f._fbq)f._fbq=n;
+n.push=n;
+n.loaded=!0;
+n.version='2.0';
+n.queue=[];
+t=b.createElement(e);
+t.async=!0;
+t.src=v;
+s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)
 }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init','1300007098838075');
+
+fbq('init', PIXEL_ID);
 fbq('track','PageView');
 </script>
 
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=123456789012345&ev=PageView&noscript=1"/>
+</noscript>
+<!-- ===== END PIXEL ===== -->
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
-body{
- min-height:100vh;display:flex;justify-content:center;align-items:center;
- color:#fff;overflow:hidden
-}
-.video-bg{position:fixed;inset:0;z-index:-2}
-video{width:100%;height:100%;object-fit:cover}
-.overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:-1}
-
-.card{
- width:520px;max-width:95%;background:rgba(0,0,0,.55);
- padding:40px;border-radius:28px;text-align:center;
- box-shadow:0 30px 90px rgba(0,0,0,.9)
-}
-
-/* NAME */
-.name-box{
- border:2px solid #00eaff;padding:14px;border-radius:10px;
- box-shadow:0 0 18px #00eaff,0 0 35px #00eaff;margin-bottom:22px
-}
-.name{
- font-size:32px;font-weight:900;color:#00eaff;
- letter-spacing:2px;text-shadow:0 0 14px #00eaff
-}
-
-/* PROFILE IMAGE */
-.avatar{
- width:160px;height:160px;border-radius:50%;
- border:4px solid #00eaff;box-shadow:0 0 30px #00eaff;
- object-fit:cover;margin-bottom:18px
-}
-
-/* TIMER */
-.timer-circle{
- width:120px;height:120px;margin:16px auto;border-radius:50%;
- display:flex;align-items:center;justify-content:center;
- border:3px solid yellow;box-shadow:0 0 18px yellow,0 0 30px yellow
-}
-.timer{font-size:30px;font-weight:900;color:yellow}
-
-/* CTA */
-.cta{
- display:inline-block;margin-top:20px;padding:20px 52px;
- border-radius:45px;background:#007bff;color:#fff;
- font-weight:900;font-size:18px;text-decoration:none;
- box-shadow:0 0 20px #00eaff,0 0 40px #00eaff;
- animation:pulse 1.4s infinite alternate
-}
-@keyframes pulse{from{transform:scale(1)}to{transform:scale(1.1)}}
-
-/* FOOTER */
-.footer-box{
- margin-top:20px;
- padding:6px 12px;
- border-radius:6px;
- border:1px solid #00eaff;
- box-shadow:0 0 8px #00eaff;
- font-size:10px;
- opacity:.8;
- display:inline-block
-}
-.footer-box a{
- color:#00eaff;
- text-decoration:none;
- font-weight:600
-}
+.neon-box{padding:12px 22px;border-radius:14px;border:2px solid #00faff;box-shadow:0 0 10px #00faff,0 0 25px #00faff}
+.neon-text{font-weight:900;font-size:1.8rem;color:#fff;text-shadow:0 0 6px #00faff,0 0 12px #00faff}
+.counter-text{font-size:1.4rem;font-weight:900;color:#00ff6a;text-shadow:0 0 10px #00ff6a}
+.sub-text{font-weight:800;color:#ffb300}
+.mirror-wrap{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;
+background:#000;box-shadow:0 0 25px rgba(0,255,255,.6)}
+.mirror-img{width:120px;height:120px;border-radius:50%;object-fit:cover}
+.neon-btn{background:#00faff;color:#ff003c;padding:14px 26px;border-radius:14px;
+font-weight:900;box-shadow:0 0 15px #00faff,0 0 35px #00faff;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 45px #00faff}}
+.video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2}
+.overlay{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.ads-credit{font-size:10px;color:#00faff;letter-spacing:1px}
 </style>
 </head>
 
-<body>
+<body class="bg-black text-white overflow-hidden">
 
-<!-- BACKGROUND VIDEO (UNCHANGED) -->
-<div class="video-bg">
- <video id="bgVideo" autoplay muted playsinline></video>
-</div>
+<div class="relative h-screen flex items-center justify-center">
+
+<!-- VIDEO BACKGROUND -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1769638967/aklogovideo_mnkygw.mp4" type="video/mp4">
+</video>
+
 <div class="overlay"></div>
 
-<div class="card">
+<div class="relative z-10 text-center px-6 w-full flex flex-col items-center">
 
- <div class="name-box">
-  <div class="name">LALA PREDICTION 2018</div>
- </div>
+  <div class="neon-box mt-4">
+    <div class="neon-text">( A K ) CRICKET TRADER™</div>
+  </div>
 
- <!-- PROFILE IMAGE (UPDATED) -->
- <img class="avatar"
- src="https://github.com/mrxsetup/LALA-CRICKET-TRADING/blob/main/LALA2.jpg?raw=true">
+  <!-- SUBSCRIBERS -->
+  <div class="mt-2 counter-text">
+    <span id="subs">0</span> Subscribers
+  </div>
 
- <div class="timer-circle">
-  <div id="timer" class="timer">01:00</div>
- </div>
+  <div class="mt-1 sub-text">CRICKET ANALYST</div>
 
- <p><b>🔥 Daily Cricket & Trading Tips</b><br><b>🏆 High Accuracy Signals</b></p>
+  <!-- PROFILE IMAGE -->
+  <div class="mt-5 mirror-wrap">
+    <img src="https://github.com/mrxsetup/-AK-_CRICKET_TRADER/blob/main/CRICKETTRADER.jpg?raw=true" class="mirror-img">
+  </div>
 
- <!-- TELEGRAM -->
- <a class="cta"
- href="https://t.me/+P1rxPGMcjYYzYjQ1"
- onclick="fbq('track','Lead');">
- JOIN TELEGRAM
- </a>
+  <!-- COUNTDOWN -->
+  <p class="mt-4 text-2xl font-extrabold">
+    Join Now <span id="countdown" class="text-yellow-400 text-4xl">30</span> Seconds
+  </p>
 
- <!-- CLICKABLE FOOTER -->
- <div class="footer-box">
-  <a href="https://t.me/MRXSETUP" target="_blank">
-   ADS SETUP BY - @MRXSETUP
-  </a>
- </div>
+  <p class="mt-3 font-bold">Join Karo Enjoy Daily Cricket Prediction 👇</p>
 
+  <!-- BUTTON -->
+  <div class="mt-8">
+    <a href="https://t.me/+SfibdD1LchkyZWI9">
+      <button class="neon-btn">JOIN TELEGRAM NOW</button>
+    </a>
+  </div>
+
+  <p class="mt-4 text-sm font-extrabold uppercase">
+    💸 ( A K ) CRICKET TRADER™ <br> Cricket Market Ka King 🏏👑
+  </p>
+
+  <div class="mt-auto pt-4 pb-2 ads-credit">ADS_SETUP BY @MRXSETUP</div>
+</div>
 </div>
 
 <script>
-/* BACKGROUND VIDEOS */
-const videos=[
- "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206316/50v_iedioy.mp4",
- "https://res.cloudinary.com/dzhykus7z/video/upload/v1768206325/51v_mtwllp.mp4"
-];
-let v=0;
-const video=document.getElementById("bgVideo");
-function playVideo(){
- video.src=videos[v];
- video.play().catch(()=>{});
-}
-video.onended=()=>{
- v=(v+1)%videos.length;
- playVideo();
-};
-playVideo();
-
-/* TIMER */
-let sec=60;
-const timer=document.getElementById("timer");
-const countdown=setInterval(()=>{
- let m=Math.floor(sec/60);
- let s=sec%60;
- timer.innerText=`${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
- if(sec<=0){
-  clearInterval(countdown);
-  window.location.href="https://t.me/+P1rxPGMcjYYzYjQ1";
- }
- sec--;
+/* countdown */
+let t=30,el=document.getElementById("countdown");
+let cd=setInterval(()=>{
+  el.textContent=t--;
+  if(t<0){clearInterval(cd);el.textContent="0";}
 },1000);
+
+/* subscribers counter */
+let target=34080,current=0,subs=document.getElementById("subs");
+let sc=setInterval(()=>{
+  current+=Math.ceil(target/300);
+  if(current>=target){current=target;clearInterval(sc);}
+  subs.textContent=current.toLocaleString();
+},20);
 </script>
 
 </body>
